@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Rafael de Souza, UNC\n#This program is free software: you can redistribute it and/or modify\n#it under the terms of the GNU General Public License version 3 as published by\n#the Free Software Foundation.\n#This program is distributed in the hope that it will be useful,\n#but WITHOUT ANY WARRANTY; without even the implied warranty of\n#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#GNU General Public License for more details.\n\n#  A copy of the GNU General Public License is available at\n#  http://www.r-project.org/Licenses/\n#\n#' @title  Spectral fiting\n#' @aliases runSpecFit\n#' @usage runSpecFit(obsSpec)\n#' @param par par\n#' @author Rafael de Souza, UNC\n#' @export\nrunSpecFit <- function(obsSpec,maxiter = 1000){\n\nObsSpecdiff <- obsSpec %>% mutate(Count = append(0,diff(Count)))\n\nloss <- function(par){\n    fitness(DiffSpecGen(par),ObsSpecdiff$Count)\n}\noutDE <- DEoptim(loss, lower = rep(0,11),\n                   upper = rep(50,11),control = list(NP = 200,itermax = maxiter))\n\nout <- data.frame(w = ObsSpec0$w,\n                  count = SpecGen(outDE$optim$bestmem))\n\nBR <- function(x){\n  vt <- x[-c(9:11)]\n  vt <- vt/sum(vt)\n  return(vt)\n}\nbestfit <- BR(outDE$optim$bestmem)*100\n\nreturn(list(spec = out, bestfit = bestfit))\n}\n",
+    "created" : 1576466264928.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2021423727",
+    "id" : "E25E91D5",
+    "lastKnownWriteTime" : 1576467175,
+    "last_content_update" : 1576467175201,
+    "path" : "~/Documents/GitHub/nuclear_package/SpecFit/R/runSpecFit.R",
+    "project_path" : "R/runSpecFit.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

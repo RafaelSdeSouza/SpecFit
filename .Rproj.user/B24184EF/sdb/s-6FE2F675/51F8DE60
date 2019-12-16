@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Rafael de Souza, UNC\n#This program is free software: you can redistribute it and/or modify\n#it under the terms of the GNU General Public License version 3 as published by\n#the Free Software Foundation.\n#This program is distributed in the hope that it will be useful,\n#but WITHOUT ANY WARRANTY; without even the implied warranty of\n#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#GNU General Public License for more details.\n\n#  A copy of the GNU General Public License is available at\n#  http://www.r-project.org/Licenses/\n#\n#' @title  Spectra generator\n#' @aliases SpecGen\n#' @usage SpecGen(par)\n#' @param par par\n#' @author Rafael de Souza, UNC\n#' @export\nSpecGen <- function(par){\n  gen <- par[1:9]\n  Nb  <- par[10]\n  Nbkg <- par[11]\n  frac <- gen/sum(gen)\n  fb <- frac[1:8]\n  fbkg <- frac[9]\n\n  out <- Nb*(fb %*% basis) + Nbkg*fbkg*bkg0\n  out2 <- as.numeric(out)\n  return(out2)\n}\n",
+    "created" : 1576466479264.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3161755549",
+    "id" : "51F8DE60",
+    "lastKnownWriteTime" : 1576438813,
+    "last_content_update" : 1576438813,
+    "path" : "~/Documents/GitHub/nuclear_package/SpecFit/R/SpecGen.R",
+    "project_path" : "R/SpecGen.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

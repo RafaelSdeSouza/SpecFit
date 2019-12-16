@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: SpecFit\nType: Package\nTitle: Spectral Fitting \nVersion: 0.1.0\nAuthor: Rafael S. de Souza <drsouza@email.unc.edu>\nMaintainer: Rafael S. de Souza <drsouza@email.unc.edu>\nImports: forcats, dplyr, purrr, DEoptim, ggplot2, stats,cowplot\nDescription: Functions to estimate chemical abundances from a 1-D spectra\nLicense: GPL (>= 3)\nEncoding: UTF-8\nLazyData: true\nRoxygenNote: 6.1.1\n",
+    "created" : 1576467204268.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1673118733",
+    "id" : "C36BD3B8",
+    "lastKnownWriteTime" : 1576447891,
+    "last_content_update" : 1576447891,
+    "path" : "~/Documents/GitHub/nuclear_package/SpecFit/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

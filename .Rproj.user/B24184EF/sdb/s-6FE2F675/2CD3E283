@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Example\npath <- getwd()\nsetwd(path)\n\nObsSpec0 <- read.table(\"obs_spec.dat\",header = T) %>% setNames(c(\"w\",\"Count\"))\n\nout <- runSpecFit(ObsSpec0)\n\ngspec <- ggplot(ObsSpec0,aes(x = w, y = Count)) +\n  geom_line() +\n  geom_line(out$spec, mapping=aes(x = w, y = count),color=\"red\",linetype=\"dashed\",size=0.5) +\n  theme_cowplot() +\n  ylab(\"Counts per energy\") +\n  xlab(\"\")  + theme(axis.title.x=element_blank(),\n                    axis.text.x=element_blank(),\n                    axis.ticks.x=element_blank())\ngres <- ggplot(ObsSpec0,aes(x = w, y = (Count-out$spec$count))) +\n  geom_line() +\n  theme_cowplot() +\n  ylab(\"Residuals\") +\n  xlab(\"Energy (keV)\")\n\npdf(\"specrec_rel.pdf\",height = 10,width = 14)\nplot_grid(gspec, gres, ncol = 1, rel_heights  = c(2.25, 1),rel_widths = c(1, 1.1),\n          align=\"v\" )\ndev.off()\n",
+    "created" : 1576467395575.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2763931769",
+    "id" : "2CD3E283",
+    "lastKnownWriteTime" : 1576467637,
+    "last_content_update" : 1576467637314,
+    "path" : "~/Documents/GitHub/Gate_radioactive/Template_fitting_1D/Example.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
